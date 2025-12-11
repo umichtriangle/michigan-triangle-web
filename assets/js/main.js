@@ -126,10 +126,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /**
    * Init swiper slider with 3 slides at once in desktop view
+   * UPDATED: Added keyboard support here
    */
   new Swiper('.slides-3', {
     speed: 600,
     loop: true,
+    
+    // Allows arrow keys to control the slider
+    keyboard: {
+      enabled: true,
+    },
+
     autoplay: {
       delay: 5000,
       disableOnInteraction: false
