@@ -4,7 +4,7 @@ const positions = {
     'Financial Operations':[
         "Accountant - Adam Abulaban",
         "Grant Writing - Aiden Becker",
-        "Fundraising - Teddy Mayoette"
+        "Fundraising - Theodore Mayoette"
     ],
 
     'External Affairs':[
