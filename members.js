@@ -42,8 +42,8 @@ const positions = {
     ],
 
     "Judicial Board": [
-        "Junior Justices - Will Eubank, Andre Couto, and Siddharth Gupta",
-        "Senior Justices - Eli Grimsley and Philippe Bertrand"
+        "Senior Justices - Will Eubank, Andre Couto, and Siddharth Gupta",
+        "Junior Justices - Eli Grimsley and Philippe Bertrand"
     ],
 };
 
