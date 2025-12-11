@@ -1,49 +1,49 @@
 const positions = {
-    'Executive Operations': ['Alumni Relations - Siddharth Gupta'],
+    'Executive Operations': ['Alumni Relations - Miles Kohn'],
 
     'Financial Operations':[
-        "Accountant - Liam Hoover",
-        "Grant Writing - Saksham Singh",
-        "Fundraising - Saksham Singh"
+        "Accountant - Adam Abulaban",
+        "Grant Writing - Aiden Becker",
+        "Fundraising - Teddy Mayoette"
     ],
 
     'External Affairs':[
-        "Greek Relations - Elan Ronen",
-        "Social Chair - Alex Simpson",
-        "Risk Manager - Jack Galasso"
+        "Greek Relations - Connor Madriago",
+        "Social Chair - Elan Ronen",
+        "Risk Manager - Arya Kakarlapudi"
     ],
 
     'Membership Development':[
-        "Brotherhood Advisors - Ian Moore",
-        "Academic Chair - Siddharth Gupta",
-        "Professional Development - Philippe Bertrand",
-        "Service and Philanthropy - Tommy Hayman",
-        "Signature Events - Philippe Bertrand"
+        "Brotherhood Advisors - Andre Couto and Elijah Pineda",
+        "Academic Chair - Vivan Nyati",
+        "Professional Development - Ethan King",
+        "Service and Philanthropy - Aiden Becker",
+        "Signature Events - Gavin Haroche"
     ],
 
     "Internal Operations": [
-        "House Manager - Jack Galasso",
+        "House Manager - William Eubank",
         "Tech Consultant - Siddharth Gupta",
-        "House Improvements - Ethan King"
+        "House Improvements - Miles Kohn"
     ],
 
     "Public Relations": [
-        "Marketing - Sam Martin",
-        "Recruitment - Elan Ronen, Alex Simpson, and Sam Martin",
+        "Marketing - Elan Ronen",
+        "Recruitment - Elan Ronen, Connor Madriago, and Griffin Moore",
         "Apparel - Liam Oliva",
-        "Webmaster - Tommy Hayman"
+        "Webmaster - Vivan Nyati"
     ],
 
     "Brotherhood": [
-        "Pledge Education - Jack Galasso and Kieth LaFriniere",
-        "Historian - Will Scott",
-        "Brotherhood Chair - Eli Grimsley  and Charlie Wang",
-        "Health and Wellness - Brandon Truong"
+        "Pledge Education - William Eubank and Sang Kim",
+        "Historian - Gavin Hodapp",
+        "Brotherhood Chair - Brandon Truong and Connor Shifflett",
+        "Health and Wellness - Eli Grimsley"
     ],
 
     "Judicial Board": [
-        "Junior Justices - Alex Simpson and Eli Grimsley",
-        "Senior Justices - Eliot Wall, Michael Villeneuve, and Ian Moore"
+        "Junior Justices - Will Eubank, Andre Couto, and Siddharth Gupta",
+        "Senior Justices - Eli Grimsley and Philippe Bertrand"
     ],
 };
 
