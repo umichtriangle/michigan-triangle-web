@@ -48,31 +48,32 @@ const positions = {
 };
 
 const members = {
-  "General Fraternity Members": [
-    "Adam Schroeder",
-    "Andres Link",
-    "Arnav Sadasivan",
-    "Ayush Lingam",
-    "Bao Duong",
-    "Bob Wei",
-    "Calvin Cater",
-    "Calvin Veith",
-    "Christopher Beane",
-    "Elijah Uribe",
-    "Eliot Wall",
-    "Elliot Kupchik",
-    "Emory Townley",
-    "Gabriel Guitar",
-    "Ishan Sinha",
-    "Jack Woods",
-    "Keith LaFriniere",
-    "Kevin Yuan",
-    "Lucas Desousa",
-    "Michael Villeneuve",
-    "Nathaniel Dykstra",
-    "Saksham Singh",
-    "Will Scott"
-  ]
+    "General Fraternity Members": [
+        "Arya Kakarlapudi",
+        "Elijah Pineda-Rodriguez",
+        "Emory Townley",
+        "Arnav Sadasivan",
+        "Bob Wei",
+        "Ishan Sinha",
+        "Kevin Yuan",
+        "Lucas Desousa",
+        "Will Eubank",
+        "Adam Abulaban",
+        "Bao Duong",
+        "Brandon Truong",
+        "Calvin Cater",
+        "Elan Ronen",
+        "Ethan King",
+        "Jack Galasso",
+        "Philippe Bertrand",
+        "Saksham Singh",
+        "Will Scott",
+        "Ayush Lingam",
+        "Connor Shifflett",
+        "Gabriel Guitar",
+        "Gavin Haroche",
+        "Griffin Moore"
+    ]
 }
 
 const chairholderPositions = document.getElementById("chairholder_and_members")
