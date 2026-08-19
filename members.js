@@ -1,19 +1,21 @@
 const positions = {
-    'Executive Operations': ['Alumni Relations - Abelard Sales'],
+    "Executive Operations": [
+        "Alumni Relations - Abelard Sales"
+    ],
 
-    'Financial Operations':[
+    "Financial Operations": [
         "Accountant - Sam Rosenberg",
         "Grant Writing - Aiden Becker",
         "Fundraising - Theodore Mayoette"
     ],
 
-    'External Affairs':[
+    "External Affairs": [
         "Greek Relations - Mark Rees",
         "Social Chair - Connor Madriago",
         "Risk Manager - Thomas Ignaczak"
     ],
 
-    'Membership Development':[
+    "Membership Development": [
         "Brotherhood Advisors - Nick Frisch",
         "Academic Chair - Richard Carlos",
         "Professional Development - Theodore Mayoette",
@@ -44,7 +46,7 @@ const positions = {
     "Judicial Board": [
         "Senior Justices - Andre Couto, Sang Kim, and Eli Grimsley",
         "Junior Justices - Richard Carlos and Sam Martin"
-    ],
+    ]
 };
 
 const members = {
@@ -74,39 +76,45 @@ const members = {
         "Gavin Haroche",
         "Griffin Moore"
     ]
-}
+};
 
-const chairholderPositions = document.getElementById("chairholder_and_members")
+const chairholderPositions = document.getElementById("chairholder_and_members");
 
-for (let key in positions) {
-    const underline = document.createElement("u")
-    const bold_and_underlined = underline.appendChild(document.createElement("b"));
-    bold_and_underlined.innerText = key;
+for (const key in positions) {
+    const underline = document.createElement("u");
+    const boldAndUnderlined = underline.appendChild(
+        document.createElement("b")
+    );
+
+    boldAndUnderlined.innerText = key;
 
     chairholderPositions.append(underline);
     chairholderPositions.append(document.createElement("br"));
 
-    for(let value of positions[key]){
+    for (const value of positions[key]) {
         const member = document.createElement("span");
         member.innerText = value;
+
         chairholderPositions.append(member);
-        chairholderPositions.append(document.createElement("br"))
+        chairholderPositions.append(document.createElement("br"));
     }
-    chairholderPositions.append(document.createElement("br"));        
+
+    chairholderPositions.append(document.createElement("br"));
 }
 
-const underline = document.createElement("u")
-const bold_and_underlined = underline.appendChild(document.createElement("b"));
-bold_and_underlined.innerText = "General Fraternity Members";
+const underline = document.createElement("u");
+const boldAndUnderlined = underline.appendChild(
+    document.createElement("b")
+);
+
+boldAndUnderlined.innerText = "General Fraternity Members";
 
 chairholderPositions.append(underline);
 chairholderPositions.append(document.createElement("br"));
-allMembers = "";
-for(let member of members["General Fraternity Members"]){
-    allMembers = allMembers + ", "  + member;
-}
 
 const allMembersElement = document.createElement("span");
-allMembersElement.innerText = allMembers.substring(2);
+
+allMembersElement.innerText =
+    members["General Fraternity Members"].join(", ");
 
 chairholderPositions.append(allMembersElement);
