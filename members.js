@@ -1,49 +1,49 @@
 const positions = {
-    'Executive Operations': ['Alumni Relations - Miles Kohn'],
+    'Executive Operations': ['Alumni Relations - Abelard Sales'],
 
     'Financial Operations':[
-        "Accountant - Adam Abulaban",
+        "Accountant - Sam Rosenberg",
         "Grant Writing - Aiden Becker",
         "Fundraising - Theodore Mayoette"
     ],
 
     'External Affairs':[
-        "Greek Relations - Connor Madriago",
-        "Social Chair - Elan Ronen",
-        "Risk Manager - Arya Kakarlapudi"
+        "Greek Relations - Mark Rees",
+        "Social Chair - Connor Madriago",
+        "Risk Manager - Thomas Ignaczak"
     ],
 
     'Membership Development':[
-        "Brotherhood Advisors - Andre Couto and Elijah Pineda",
-        "Academic Chair - Vivan Nyati",
-        "Professional Development - Ethan King",
-        "Service and Philanthropy - Aiden Becker",
-        "Signature Events - Gavin Haroche"
+        "Brotherhood Advisors - Nick Frisch",
+        "Academic Chair - Richard Carlos",
+        "Professional Development - Theodore Mayoette",
+        "Service and Philanthropy - Cooper Curtis",
+        "Signature Events - Brent Armstrong"
     ],
 
     "Internal Operations": [
-        "House Manager - William Eubank",
-        "Tech Consultant - Siddharth Gupta",
-        "House Improvements - Miles Kohn"
+        "House Manager - Brent Armstrong",
+        "Tech Consultant - Vivan Nyati",
+        "House Improvements - Aidan Nuttle"
     ],
 
     "Public Relations": [
-        "Marketing - Elan Ronen",
-        "Recruitment - Elan Ronen, Connor Madriago, and Griffin Moore",
-        "Apparel - Liam Oliva",
+        "Marketing - Kevin Cetina",
+        "Recruitment - Mark Rees, Connor Madriago, Aidan Nuttle, and Theodore Mayoette",
+        "Apparel - Eric Lingg",
         "Webmaster - Vivan Nyati"
     ],
 
     "Brotherhood": [
-        "Pledge Education - William Eubank and Sang Kim",
-        "Historian - Gavin Hodapp",
-        "Brotherhood Chair - Brandon Truong and Connor Shifflett",
-        "Health and Wellness - Eli Grimsley"
+        "Pledge Education - Andre Couto and Nick Frisch",
+        "Historian - Abelard Sales",
+        "Brotherhood Chair - Aidan Nuttle and Andres Link",
+        "Health and Wellness - Cooper Curtis"
     ],
 
     "Judicial Board": [
-        "Senior Justices - Will Eubank, Andre Couto, and Siddharth Gupta",
-        "Junior Justices - Eli Grimsley and Philippe Bertrand"
+        "Senior Justices - Andre Couto, Sang Kim, and Eli Grimsley",
+        "Junior Justices - Richard Carlos and Sam Martin"
     ],
 };
 
