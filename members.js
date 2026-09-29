@@ -78,9 +78,12 @@ const members = {
     ]
 };
 
-const chairholderPositions = document.getElementById("chairholder_and_members");
+const chairholderPositions =
+    document.getElementById("chairholder_and_members");
 
+// Render chairholder positions
 for (const key in positions) {
+
     const underline = document.createElement("u");
     const boldAndUnderlined = underline.appendChild(
         document.createElement("b")
@@ -92,8 +95,17 @@ for (const key in positions) {
     chairholderPositions.append(document.createElement("br"));
 
     for (const value of positions[key]) {
+
         const member = document.createElement("span");
-        member.innerText = value;
+
+        // Make every instance of Aidan Nuttle clickable
+        member.innerHTML = value.replaceAll(
+            "Aidan Nuttle",
+            `<span
+                onclick="document.getElementById('nuttleEgg').style.display='block'"
+                style="cursor:pointer;"
+            >Aidan Nuttle</span>`
+        );
 
         chairholderPositions.append(member);
         chairholderPositions.append(document.createElement("br"));
@@ -102,7 +114,9 @@ for (const key in positions) {
     chairholderPositions.append(document.createElement("br"));
 }
 
+// General fraternity members heading
 const underline = document.createElement("u");
+
 const boldAndUnderlined = underline.appendChild(
     document.createElement("b")
 );
@@ -112,6 +126,7 @@ boldAndUnderlined.innerText = "General Fraternity Members";
 chairholderPositions.append(underline);
 chairholderPositions.append(document.createElement("br"));
 
+// General fraternity member list
 const allMembersElement = document.createElement("span");
 
 allMembersElement.innerText =
