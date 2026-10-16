@@ -79,165 +79,217 @@ const members = {
     ]
 };
 
+// ===================================
+// SAM ROSENBERG JUMPSCARE
+// ===================================
+
+const samImages = [
+    "assets/img/easteregg/riley1.jpeg",
+    "assets/img/easteregg/riley2.jpeg",
+    "assets/img/easteregg/riley3.jpeg"
+];
+
+// Preload images
+const preloadedSamImages = samImages.map(src => {
+    const img = new Image();
+    img.src = src;
+    return img;
+});
+
+function samJumpscare() {
+
+    // Prevent multiple jumpscares
+    if (document.getElementById("sam-jumpscare")) {
+        return;
+    }
+
+    // Create fullscreen black background
+    const overlay = document.createElement("div");
+    overlay.id = "sam-jumpscare";
+
+    overlay.style.cssText = `
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        background: black;
+        z-index: 2147483647;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    `;
+
+    // Create image
+    const picture = document.createElement("img");
+    picture.src = samImages[0];
+    picture.alt = "";
+
+    // FIX: No zooming or cropping
+    picture.style.cssText = `
+        display: block;
+        width: auto;
+        height: auto;
+        max-width: 80vw;
+        max-height: 80vh;
+        object-fit: contain;
+    `;
+
+    overlay.appendChild(picture);
+    document.body.appendChild(overlay);
+
+    // Change image every 0.5 seconds
+    let index = 0;
+
+    const interval = setInterval(() => {
+        index = (index + 1) % samImages.length;
+        picture.src = samImages[index];
+    }, 500);
+
+    // Remove after 3.5 seconds
+    setTimeout(() => {
+        clearInterval(interval);
+        overlay.remove();
+    }, 3500);
+}
+
+// ===================================
+// AIDAN NUTTLE EASTER EGG
+// ===================================
+
+function aidanEasterEgg() {
+    const egg = document.getElementById("nuttleEgg");
+
+    if (egg) {
+        egg.style.display = "block";
+    }
+}
+
+// ===================================
+// CREATE CLICKABLE NAME
+// ===================================
+
+function createClickableName(name, clickFunction) {
+
+    const button = document.createElement("button");
+
+    button.type = "button";
+    button.textContent = name;
+
+    // Keep appearance identical to other names
+    button.style.cssText = `
+        background: transparent;
+        border: none;
+        padding: 0;
+        margin: 0;
+        color: inherit;
+        font: inherit;
+        line-height: inherit;
+        cursor: pointer;
+        display: inline;
+    `;
+
+    button.addEventListener("click", clickFunction);
+
+    return button;
+}
+
+// ===================================
+// RENDER MEMBERS
+// ===================================
+
 const chairholderPositions =
     document.getElementById("chairholder_and_members");
 
-// Render chairholder positions
-for (const key in positions) {
+if (chairholderPositions) {
 
-    const underline = document.createElement("u");
-    const boldAndUnderlined = underline.appendChild(
-        document.createElement("b")
-    );
+    chairholderPositions.innerHTML = "";
 
-    boldAndUnderlined.innerText = key;
+    for (const key in positions) {
 
-    chairholderPositions.append(underline);
-    chairholderPositions.append(document.createElement("br"));
+        // Section heading
+        const underline = document.createElement("u");
+        const bold = document.createElement("b");
 
-    for (const value of positions[key]) {
-        const member = document.createElement("span");
+        bold.textContent = key;
+        underline.appendChild(bold);
 
-        // Preserve the Aidan Nuttle easter egg
-        member.innerHTML = value.replaceAll(
-            "Aidan Nuttle",
-            `<span
-                onclick="document.getElementById('nuttleEgg').style.display='block'"
-                style="cursor:pointer;"
-            >Aidan Nuttle</span>`
+        chairholderPositions.appendChild(underline);
+
+        chairholderPositions.appendChild(
+            document.createElement("br")
         );
 
-        chairholderPositions.append(member);
-        chairholderPositions.append(document.createElement("br"));
+        // Render positions
+        for (const value of positions[key]) {
+
+            const member = document.createElement("span");
+
+            // Identify special names
+            const parts = value.split(
+                /(Sam Rosenberg|Aidan Nuttle)/g
+            );
+
+            parts.forEach(part => {
+
+                if (part === "Sam Rosenberg") {
+
+                    const button = createClickableName(
+                        "Sam Rosenberg",
+                        samJumpscare
+                    );
+
+                    member.appendChild(button);
+
+                } else if (part === "Aidan Nuttle") {
+
+                    const button = createClickableName(
+                        "Aidan Nuttle",
+                        aidanEasterEgg
+                    );
+
+                    member.appendChild(button);
+
+                } else {
+
+                    member.appendChild(
+                        document.createTextNode(part)
+                    );
+
+                }
+            });
+
+            chairholderPositions.appendChild(member);
+
+            chairholderPositions.appendChild(
+                document.createElement("br")
+            );
+        }
+
+        chairholderPositions.appendChild(
+            document.createElement("br")
+        );
     }
 
-    chairholderPositions.append(document.createElement("br"));
-}
+    // General members heading
+    const generalUnderline = document.createElement("u");
+    const generalBold = document.createElement("b");
 
-// General fraternity members heading
-const underline = document.createElement("u");
+    generalBold.textContent = "General Fraternity Members";
+    generalUnderline.appendChild(generalBold);
 
-const boldAndUnderlined = underline.appendChild(
-    document.createElement("b")
-);
+    chairholderPositions.appendChild(generalUnderline);
 
-boldAndUnderlined.innerText = "General Fraternity Members";
+    chairholderPositions.appendChild(
+        document.createElement("br")
+    );
 
-chairholderPositions.append(underline);
-chairholderPositions.append(document.createElement("br"));
+    // General members list
+    const allMembersElement = document.createElement("span");
 
-// General fraternity member list
-const allMembersElement = document.createElement("span");
-allMembersElement.innerText =
-    members["General Fraternity Members"].join(", ");
+    allMembersElement.textContent =
+        members["General Fraternity Members"].join(", ");
 
-chairholderPositions.append(allMembersElement);
-
-// SAM ROSENBERG JUMPSCARE
-
-const samMember = [
-    ...document.querySelectorAll("#chairholder_and_members > span")
-].find(
-    (element) =>
-        element.textContent.trim() === "Accountant - Sam Rosenberg"
-);
-
-if (samMember) {
-
-    // Make only Sam's name clickable
-    samMember.textContent = "Accountant - ";
-
-    const samButton = document.createElement("button");
-    samButton.type = "button";
-    samButton.textContent = "Sam Rosenberg";
-
-    samButton.style.cssText =
-        "background:transparent;" +
-        "border:0;" +
-        "padding:0;" +
-        "color:inherit;" +
-        "font:inherit;" +
-        "cursor:pointer;";
-
-    // Jumpscare images
-    const samImages = [
-        "assets/img/easteregg/riley1.jpeg",
-        "assets/img/easteregg/riley2.jpeg",
-        "assets/img/easteregg/riley3.jpeg"
-    ];
-
-    // Preload images for faster display
-    samImages.forEach((src) => {
-        const preloaded = new Image();
-        preloaded.src = src;
-    });
-
-    samButton.addEventListener("click", () => {
-
-        // Prevent multiple jumpscares at once
-        if (document.getElementById("sam-jumpscare")) return;
-
-        // Create fullscreen overlay
-        const overlay = document.createElement("div");
-        overlay.id = "sam-jumpscare";
-
-        overlay.style.cssText =
-            "position:fixed;" +
-            "inset:0;" +
-            "width:100vw;" +
-            "height:100dvh;" +
-            "z-index:2147483647;" +
-            "background:black;" +
-            "display:flex;" +
-            "align-items:center;" +
-            "justify-content:center;" +
-            "overflow:hidden;" +
-            "cursor:pointer;";
-
-        // Create image
-        const picture = document.createElement("img");
-        picture.src = samImages[0];
-        picture.alt = "";
-
-        picture.style.cssText =
-            "width:100%;" +
-            "height:100%;" +
-            "object-fit:cover;";
-
-        overlay.append(picture);
-        document.body.append(overlay);
-
-        // Cycle through images every 0.5 seconds
-        let frame = 0;
-
-        const cycle = window.setInterval(() => {
-            frame = (frame + 1) % samImages.length;
-            picture.src = samImages[frame];
-        }, 500);
-
-        let timeout;
-
-        // Function to close jumpscare
-        function closeJumpscare() {
-            window.clearInterval(cycle);
-            window.clearTimeout(timeout);
-            document.removeEventListener("keydown", onKeyDown);
-            overlay.remove();
-        }
-
-        function onKeyDown(event) {
-            if (event.key === "Escape") {
-                closeJumpscare();
-            }
-        }
-
-        // Allow early dismissal
-        overlay.addEventListener("click", closeJumpscare);
-        document.addEventListener("keydown", onKeyDown);
-
-        // Automatically disappear after 3.5 seconds
-        timeout = window.setTimeout(closeJumpscare, 3500);
-    });
-
-    samMember.append(samButton);
+    chairholderPositions.appendChild(allMembersElement);
 }
